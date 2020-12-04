@@ -1,16 +1,14 @@
 set encoding=UTF-8
 " tabstop:          Width of tab character
-" " softtabstop:      Fine tunes the amount of white space to be added
-" " shiftwidth        Determines the amount of whitespace to add in normal
+" softtabstop:      Fine tunes the amount of white space to be added
+" shiftwidth        Determines the amount of whitespace to add in normal
 " mode
-" " expandtab:        When this option is enabled, vi will use spaces instead
+" expandtab:        When this option is enabled, vi will use spaces instead
 " of tabs
  set tabstop     =2
  set softtabstop =2
  set shiftwidth  =2
  set expandtab
-
-
 
 
 "nerdtree
@@ -19,7 +17,7 @@ let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let NERDTreeIgnore = []
 let NERDTreeStatusline = ''
-let g:NERDTreeIndicatorMapCustom = {
+let g:NERDTreeGitStatusIndicatorMapCustom = {
     \ "Modified"  : "✹",
     \ "Staged"    : "✚",
     \ "Untracked" : "✭",
@@ -31,6 +29,8 @@ let g:NERDTreeIndicatorMapCustom = {
     \ 'Ignored'   : '☒',
     \ "Unknown"   : "?"
     \ }
+
+autocmd vimenter * NERDTree
 
 set number
 set relativenumber
@@ -55,8 +55,6 @@ call plug#begin(stdpath('data') . '/plugged')
 	Plug 'Xuyuanp/nerdtree-git-plugin'
 	Plug 'itchyny/lightline.vim'
   Plug 'jiangmiao/auto-pairs'
-
-
 
 call plug#end()
 
